@@ -71,18 +71,18 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          <form action="#" id="order_form" name="order_form" onchange="validate()">
+          <form action="#" id="order_form" name="order_form">
 
             <label for="cname">Customer Name</label>
-            <input type="text" name="cname" id="cname" onchange="validate_name(form)" required>
+            <input type="text" name="cname" id="cname" required>
             <p id="name_error_msg" class="error_msg"></p>
 
             <label for="count">Count</label>
-            <input type="number" name="count" id="count" min="1" max="15" onchange="validate_count(form)" required>
+            <input type="number" name="count" id="count" min="1" max="15">
             <p id="count_error_msg" class="error_msg"></p>
 
             <label for="cupcake_type">Type</label>
-            <select name="cupcake_type" id="cupcake_type" onchange="validate_type(form)">
+            <select name="cupcake_type" id="cupcake_type">
               <option value="none">None</option>
               <option value="chocolate">Chocolate</option>
               <option value="lemon">Lemon</option>
@@ -92,7 +92,7 @@
             <p id="type_error_msg" class="error_msg"></p>
 
             <label for="delivery_time">Delivery time</label>
-            <select name="delivery_time" id="delivery_time" onchange="validate_time(form)">
+            <select name="delivery_time" id="delivery_time">
               <option value="none">None</option>
               <option value="12pm">12:00 PM</option>
               <option value="12-30pm">12:30 PM</option>
@@ -107,14 +107,14 @@
             <p id="delivery_error_msg" class="error_msg"></p>
 
             <label for="allergies">Allergies</label>
-            <select name="allergies" id="allergies" onchange="validate_allergies(form)">
+            <select name="allergies" id="allergies">
               <option value="none">None</option>
               <option value="dairyFree">Dairy Free</option>
               <option value="nutFree">Nut Free</option>
             </select>
             <p id="allergies_error_msg" class="error_msg"></p>
 
-            <button type="submit" onclick="validate()">Submit</button>
+            <button type="submit">Submit</button>
           </form>
         </div>
         <div class="col-sm-6">

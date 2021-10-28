@@ -41,27 +41,43 @@ for(let x in cup_cakes){
 function validate(){
     //write code that validates the form
     let form=document.getElementById("order_form");
-    let name_msg=document.getElementById("name_error_msg");
-    let name_val=form.cname.value;
 
     //validate name
-    let validName=validate_name(form);
+    var validName=validate_name(form);
+    if(validName){
+        localStorage.setItem("name",form.cname.value);
+    }
 
     //validate count
-    let validCount=validate_count(form);
+    var validCount=validate_count(form);
 
     //validate type
-    let validType=validate_type(form);
+    var validType=validate_type(form);
     
     //validate delivery time
-    let validTime=validate_time(form);
+    var validTime=validate_time(form);
 
     //validate allergies
-    let validAllergies=validate_allergies(form);
+    var validAllergies=validate_allergies(form);
+
+    if(validName&&validTime&&validCount&&validType&&validAllergies){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 function show_storage(){
     //write code that shows the name from local storage
+    let name=document.getElementById("welcome");
+    if(localStorage.getItem("name")==null || localStorage.getItem("name")==""){
+        name.innerText="Welcome user";
+    }
+    else{
+        name.innerText=`Welcome ${localStorage.getItem("name")}!`;
+    }
+
 }
 
 
@@ -121,6 +137,7 @@ function validate_type(form){
         type_msg.className="error_msg ok";
         returnedVal=true;
     }
+    return returnedVal;
 }
 function validate_time(form){
     let type_val=form.cupcake_type.value;
@@ -173,4 +190,18 @@ function validate_allergies(form){
         returnedVal=true;
     }
     return returnedVal;
+}
+
+document.forms["order_form"].onsubmit=function(e){
+    let valid=validate();
+    if(valid){
+        localStorage.setItem("Customer Name",cname.value);
+        localStorage.setItem("Count",count.value);
+        localStorage.setItem("Type",cupcake_type.value);
+        localStorage.setItem("Delivery Time",delivery_time.value);
+        localStorage.setItem("Allergies",allergies.value);
+    }
+    else{
+        e.preventDefault();
+    }
 }
