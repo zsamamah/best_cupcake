@@ -1,0 +1,51 @@
+span.welcome{
+    background-color:black;
+    color:white;
+    padding:10px;
+}
+.navbar-brand{
+    background-color: pink;
+}
+label,input{
+    display: block;
+}
+input{
+    width: 100%;
+}
+select{
+    width: 100%;
+}
+input,select{
+    padding: 0.2em;
+}
+button{
+    margin-top: 1em;
+    padding: 0.7em;
+    color: white;
+    background-color: blue;
+    border: none;
+    border-radius: 10px;
+}
+p{
+    margin: 0;
+    padding: 0.2em;
+}
+.error_msg{
+    font-size: 0.7em;
+    /* color: red; */
+}
+.ok{
+    color: green;
+    font-weight: bold;
+    padding: 1px;
+}
+.not_ok{
+    color: red;
+}
+
+.errorValidate{
+    border:2px solid red;
+}
+.trueValidate{
+    border:2px solid green;
+}
